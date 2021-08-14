@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 7bdf17c7bf3608a438c2f8817ff2423d, type: 2}
 --- !u!1 &63561786
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +310,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunGrass: {fileID: 1676150099}
   gunPlayer: {fileID: 1325936426}
-  mainPlayer: {fileID: 1604282001}
 --- !u!1 &482383235
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +598,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636205449}
   m_CullTransparentMesh: 1
+--- !u!1 &637147887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d29aad94c9eca454c8f6505f2c6c12d3, type: 3}
+  m_PrefabInstance: {fileID: 933927611}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &637147888
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637147887}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &637147889
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637147887}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &637147890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637147887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a00ecad30a52724aa6640760991d1a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainPlayer: {fileID: 1604282001}
+--- !u!95 &637147891
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637147887}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75f861aa2064a4c499f9631531b75ee0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &701917158
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,11 +1045,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d29aad94c9eca454c8f6505f2c6c12d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4831886
+      value: -2.423
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d29aad94c9eca454c8f6505f2c6c12d3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.12200928
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d29aad94c9eca454c8f6505f2c6c12d3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1543,7 +1614,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunGrass: {fileID: 1382687557}
   gunPlayer: {fileID: 1546695759}
-  mainPlayer: {fileID: 1604282001}
 --- !u!65 &1442051051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1721,7 +1791,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1604282001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84c32778d3420ff44b558180a7bca735, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a01ca822ad66d14b83dd29164d9f466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10000

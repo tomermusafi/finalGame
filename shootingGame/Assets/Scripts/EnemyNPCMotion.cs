@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NPCMotion : MonoBehaviour
+public class EnemyNPCMotion : MonoBehaviour
 {
     private NavMeshAgent agent;
-    public GameObject startPoint;
-    public GameObject endPoint;
-    bool goBack = false;
+    //public GameObject startPoint;
+    //public GameObject endPoint;
+    public GameObject mainPlayer;
+    bool followMainPlayer = true;
+    int changePosition = 200;
+    int currentPositionCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -19,22 +22,29 @@ public class NPCMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!goBack)
+        Debug.Log(mainPlayer.GetComponent<PlayerAttributes>().health);
+
+        
+        if (followMainPlayer && currentPositionCount % changePosition == 0)
         {
-            agent.SetDestination(startPoint.transform.position);
-            if (agent.transform.position.x == startPoint.transform.position.x &&
-                agent.transform.position.z == startPoint.transform.position.z)
-            {
-                goBack = true;
-            }
+            System.Random rnd = new System.Random();
+            int x = rnd.Next(1, 15);
+            int y = rnd.Next(1, 15);
+            int z = rnd.Next(1, 15);
+            agent.SetDestination(new Vector3(mainPlayer.transform.position.x, mainPlayer.transform.position.y, mainPlayer.transform.position.z));
+
         } else
         {
-            agent.SetDestination(endPoint.transform.position);
+            // follow secondary player
+            // TODO - Add secondary player and logic
+            /*agent.SetDestination(endPoint.transform.position);
             if (agent.transform.position.x == endPoint.transform.position.x &&
                 agent.transform.position.z == endPoint.transform.position.z)
             {
-                goBack = false;
+
             }
+            */
         }
+
     }
 }
