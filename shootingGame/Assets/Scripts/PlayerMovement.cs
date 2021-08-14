@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController controller;
-    private float speed = 0.4f;
+    private float speed = 0.1f;
     float rx = 0f, ry;
     private float angularSpeed = 12f;
     public GameObject playerCamera;
