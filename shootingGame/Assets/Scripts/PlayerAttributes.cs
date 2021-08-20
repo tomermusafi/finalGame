@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerAttributes : MonoBehaviour
 {
     public int health;
+    public bool isAlive;
+    public bool hasGun;
+    public bool hasGrenade;
 
     // Start is called before the first frame update
     void Start()
