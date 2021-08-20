@@ -8,7 +8,7 @@ public class PickGun : MonoBehaviour
 {
     public GameObject gunGrass;
     public GameObject gunPlayer;
-    
+
     // Start is called before the first frame update
     void Start()
     {

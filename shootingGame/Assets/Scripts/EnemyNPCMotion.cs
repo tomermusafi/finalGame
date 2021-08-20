@@ -14,11 +14,18 @@ public class NPCMotion : MonoBehaviour
     int changePosition = 30;
     int currentPositionCount = 0;
 
+    public GameObject gun1;
+    public GameObject gun2;
+    public GameObject gun3;
+    public GameObject gun4;
+
+    private GameObject pickedGun = null;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -27,7 +34,54 @@ public class NPCMotion : MonoBehaviour
 
         if (currentPlayer.GetComponent<PlayerAttributes>().isAlive)
         {
-            if (followMainPlayer)
+            if (!currentPlayer.GetComponent<PlayerAttributes>().hasGun)
+            {
+                float pickedGunDistance = 9999999;
+                if (gun1.activeSelf)
+                {
+                    if (Vector3.Distance(gun1.transform.position, currentPlayer.transform.position) < pickedGunDistance)
+                    {
+                        pickedGunDistance = Vector3.Distance(gun1.transform.position, currentPlayer.transform.position);
+                        pickedGun = gun1;
+                    }
+                }
+                if (gun2.activeSelf)
+                {
+                    if (Vector3.Distance(gun2.transform.position, currentPlayer.transform.position) < pickedGunDistance)
+                    {
+                        pickedGunDistance = Vector3.Distance(gun1.transform.position, currentPlayer.transform.position);
+                        pickedGun = gun2;
+                    }
+                }
+                if (gun3.activeSelf)
+                {
+                    if (Vector3.Distance(gun3.transform.position, currentPlayer.transform.position) < pickedGunDistance)
+                    {
+                        pickedGunDistance = Vector3.Distance(gun1.transform.position, currentPlayer.transform.position);
+                        pickedGun = gun3;
+                    }
+                }
+                if (gun4.activeSelf)
+                {
+                    if (Vector3.Distance(gun4.transform.position, currentPlayer.transform.position) < pickedGunDistance)
+                    {
+                        pickedGunDistance = Vector3.Distance(gun1.transform.position, currentPlayer.transform.position);
+                        pickedGun = gun4;
+                    }
+                }
+                agent.SetDestination(pickedGun.transform.position);
+
+                if (pickedGun.transform.position.x == currentPlayer.transform.position.x &&
+                    pickedGun.transform.position.z == currentPlayer.transform.position.z)
+                {
+                    pickedGun.SetActive(false);
+                    currentPlayer.transform.GetChild(currentPlayer.transform.childCount-1).gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                    currentPlayer.GetComponent<PlayerAttributes>().hasGun = true;
+                    //Debug.Log();
+                }
+            }
+
+            else if (followMainPlayer)
             {
                 if (currentPositionCount % changePosition == 0)
                 {
