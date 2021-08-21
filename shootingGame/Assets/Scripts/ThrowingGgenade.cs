@@ -7,6 +7,7 @@ public class ThrowingGgenade : MonoBehaviour
     private bool isThrowen = false;
     public GameObject player;
     public GameObject grenadePrefab;
+    public GameObject currentPlayer;
     private AudioSource sound;
     // Start is called before the first frame update
     void Start()
@@ -19,13 +20,15 @@ public class ThrowingGgenade : MonoBehaviour
     {
         if (Input.GetKey("q")) 
         {
-            if (!isThrowen)
+            if (!isThrowen && currentPlayer.GetComponent<PlayerAttributes>().hasGrenade)
             {
+                currentPlayer.GetComponent<PlayerAttributes>().hasGrenade = false;
                 isThrowen = true;
                 ThrowGgenade();
             }
         }
     }
+
     void ThrowGgenade() 
     {
         GameObject grenade = Instantiate(grenadePrefab, transform.position, transform.rotation);
@@ -36,6 +39,7 @@ public class ThrowingGgenade : MonoBehaviour
         rb.AddForce(direction, ForceMode.Impulse);
         StartCoroutine(Explode(grenade));
     }
+
     IEnumerator Explode(GameObject grenade)
     {
         yield return new WaitForSeconds(2.5f);

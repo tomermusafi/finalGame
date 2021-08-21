@@ -9,6 +9,8 @@ public class PickGun : MonoBehaviour
     public GameObject gunGrass;
     public GameObject gunPlayer;
 
+    public GameObject currentPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,14 @@ public class PickGun : MonoBehaviour
     {
         gunGrass.SetActive(false);
         gunPlayer.SetActive(true);
+        if (gunPlayer.transform.gameObject.name.Contains("Glock"))
+        {
+            currentPlayer.GetComponent<PlayerAttributes>().hasGun = true;
+        } 
+        else if (gunPlayer.transform.gameObject.name.Contains("Grenade"))
+        {
+            currentPlayer.GetComponent<PlayerAttributes>().hasGrenade = true;
+        }
     }
 
     // Update is called once per frame
