@@ -19,7 +19,13 @@ public class NPCMotion : MonoBehaviour
     public GameObject gun3;
     public GameObject gun4;
 
+    public GameObject grenade1;
+    public GameObject grenade2;
+    public GameObject grenade3;
+    public GameObject grenade4;
+
     private GameObject pickedGun = null;
+    private GameObject pickedGrenade = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +55,7 @@ public class NPCMotion : MonoBehaviour
                 {
                     if (Vector3.Distance(gun2.transform.position, currentPlayer.transform.position) < pickedGunDistance)
                     {
-                        pickedGunDistance = Vector3.Distance(gun1.transform.position, currentPlayer.transform.position);
+                        pickedGunDistance = Vector3.Distance(gun2.transform.position, currentPlayer.transform.position);
                         pickedGun = gun2;
                     }
                 }
@@ -57,7 +63,7 @@ public class NPCMotion : MonoBehaviour
                 {
                     if (Vector3.Distance(gun3.transform.position, currentPlayer.transform.position) < pickedGunDistance)
                     {
-                        pickedGunDistance = Vector3.Distance(gun1.transform.position, currentPlayer.transform.position);
+                        pickedGunDistance = Vector3.Distance(gun3.transform.position, currentPlayer.transform.position);
                         pickedGun = gun3;
                     }
                 }
@@ -65,7 +71,7 @@ public class NPCMotion : MonoBehaviour
                 {
                     if (Vector3.Distance(gun4.transform.position, currentPlayer.transform.position) < pickedGunDistance)
                     {
-                        pickedGunDistance = Vector3.Distance(gun1.transform.position, currentPlayer.transform.position);
+                        pickedGunDistance = Vector3.Distance(gun4.transform.position, currentPlayer.transform.position);
                         pickedGun = gun4;
                     }
                 }
@@ -77,6 +83,53 @@ public class NPCMotion : MonoBehaviour
                     pickedGun.SetActive(false);
                     currentPlayer.transform.GetChild(currentPlayer.transform.childCount-1).gameObject.transform.GetChild(0).gameObject.SetActive(true);
                     currentPlayer.GetComponent<PlayerAttributes>().hasGun = true;
+                    //Debug.Log();
+                }
+            }
+
+            else if (!currentPlayer.GetComponent<PlayerAttributes>().hasGrenade)
+            {
+                float pickedGrenadeDistance = 9999999;
+                if (grenade1.activeSelf)
+                {
+                    if (Vector3.Distance(grenade1.transform.position, currentPlayer.transform.position) < pickedGrenadeDistance)
+                    {
+                        pickedGrenadeDistance = Vector3.Distance(grenade1.transform.position, currentPlayer.transform.position);
+                        pickedGrenade = grenade1;
+                    }
+                }
+                if (grenade2.activeSelf)
+                {
+                    if (Vector3.Distance(grenade2.transform.position, currentPlayer.transform.position) < pickedGrenadeDistance)
+                    {
+                        pickedGrenadeDistance = Vector3.Distance(grenade2.transform.position, currentPlayer.transform.position);
+                        pickedGrenade = grenade2;
+                    }
+                }
+                if (grenade3.activeSelf)
+                {
+                    if (Vector3.Distance(grenade3.transform.position, currentPlayer.transform.position) < pickedGrenadeDistance)
+                    {
+                        pickedGrenadeDistance = Vector3.Distance(grenade3.transform.position, currentPlayer.transform.position);
+                        pickedGrenade = grenade3;
+                    }
+                }
+                if (grenade4.activeSelf)
+                {
+                    if (Vector3.Distance(grenade4.transform.position, currentPlayer.transform.position) < pickedGrenadeDistance)
+                    {
+                        pickedGrenadeDistance = Vector3.Distance(grenade4.transform.position, currentPlayer.transform.position);
+                        pickedGrenade = grenade4;
+                    }
+                }
+                agent.SetDestination(pickedGrenade.transform.position);
+
+                if (pickedGrenade.transform.position.x == currentPlayer.transform.position.x &&
+                    pickedGrenade.transform.position.z == currentPlayer.transform.position.z)
+                {
+                    pickedGrenade.SetActive(false);
+                    currentPlayer.transform.GetChild(currentPlayer.transform.childCount - 1).gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                    currentPlayer.GetComponent<PlayerAttributes>().hasGrenade = true;
                     //Debug.Log();
                 }
             }

@@ -22,7 +22,7 @@ public class GunShoot : MonoBehaviour
     public bool isNPC;
     //int countFramesCount = 0;
     int whenToShootFrames = 100;
-    int minusHealth = 50;
+    int minusHealth = 1;
     // Start is called before the first frame update
     void Start()
     {
