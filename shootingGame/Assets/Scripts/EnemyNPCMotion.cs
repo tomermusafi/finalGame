@@ -11,7 +11,6 @@ public class EnemyNPCMotion : MonoBehaviour
     public GameObject currentPlayer;
     public GameObject followedPlayer;
     public bool followMainPlayer = true;
-    int changePosition = 30;
     int currentPositionCount = 0;
 
     public GameObject gun1;
@@ -26,6 +25,9 @@ public class EnemyNPCMotion : MonoBehaviour
 
     private GameObject pickedGun = null;
     private GameObject pickedGrenade = null;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,8 +79,9 @@ public class EnemyNPCMotion : MonoBehaviour
                 }
                 agent.SetDestination(pickedGun.transform.position);
 
-                if (pickedGun.transform.position.x == currentPlayer.transform.position.x &&
-                    pickedGun.transform.position.z == currentPlayer.transform.position.z)
+                //if (pickedGun.transform.position.x == currentPlayer.transform.position.x &&
+                  //  pickedGun.transform.position.z == currentPlayer.transform.position.z)
+                if (Vector3.Distance(pickedGun.transform.position, currentPlayer.transform.position) < 5)
                 {
                     pickedGun.SetActive(false);
                     currentPlayer.transform.GetChild(currentPlayer.transform.childCount-1).gameObject.transform.GetChild(0).gameObject.SetActive(true);
@@ -123,8 +126,9 @@ public class EnemyNPCMotion : MonoBehaviour
                 }
                 agent.SetDestination(pickedGrenade.transform.position);
 
-                if (pickedGrenade.transform.position.x == currentPlayer.transform.position.x &&
-                    pickedGrenade.transform.position.z == currentPlayer.transform.position.z)
+                //if (pickedGrenade.transform.position.x == currentPlayer.transform.position.x &&
+                  //  pickedGrenade.transform.position.z == currentPlayer.transform.position.z)
+                if (Vector3.Distance(pickedGrenade.transform.position, currentPlayer.transform.position) < 5)
                 {
                     pickedGrenade.SetActive(false);
                     currentPlayer.transform.GetChild(currentPlayer.transform.childCount - 2).gameObject.transform.GetChild(0).gameObject.SetActive(true);
@@ -134,32 +138,63 @@ public class EnemyNPCMotion : MonoBehaviour
 
             else if (followMainPlayer)
             {
-                if (currentPositionCount % changePosition == 0)
+                if (currentPositionCount % currentPlayer.GetComponent<PlayerAttributes>().changePosition == 0)
                 {
-                    System.Random rnd = new System.Random();
-                    int x = rnd.Next(20, 50);
-                    int z = rnd.Next(20, 50);
-                    //transform.position = Vector3.MoveTowards(transform.position, followedPlayer.transform.position, 1);
-                    /*agent.SetDestination(new Vector3(followedPlayer.transform.position.x + x,
-                        agent.transform.position.y,
-                        followedPlayer.transform.position.z + z));
-                    */
-                    Debug.Log("ASD");
+                    if (currentPlayer.GetComponent<PlayerAttributes>().isMainPlayerTeammate)
+                    {
+                        System.Random rnd = new System.Random();
+                        int x = rnd.Next(0, 30);
+                        int z = rnd.Next(0, 30);
+                        int minus = rnd.Next(0, 2);
+                        if (minus == 0)
+                        {
+                            x *= -1;
+                            z *= -1;
+                        }
+                        //transform.position = Vector3.MoveTowards(transform.position, followedPlayer.transform.position, 1);
+                        agent.SetDestination(new Vector3(followedPlayer.transform.position.x + x,
+                            agent.transform.position.y,
+                            followedPlayer.transform.position.z + z));
+                    }
+                    else
+                    {
+                        System.Random rnd = new System.Random();
+                        int x = rnd.Next(0, 30);
+                        int z = rnd.Next(0, 30);
+                        int minus = rnd.Next(0, 2);
+                        if (minus == 0)
+                        {
+                            x *= -1;
+                            z *= -1;
+                        }
+                        //transform.position = Vector3.MoveTowards(transform.position, followedPlayer.transform.position, 1);
+                        agent.SetDestination(new Vector3(followedPlayer.transform.position.x + x,
+                            agent.transform.position.y,
+                            followedPlayer.transform.position.z + z));
+
+                        //Debug.Log("ASD");
+                    }
                 }
 
             }
             else
             {
-                if (currentPositionCount % changePosition == 0)
+                if (currentPositionCount % currentPlayer.GetComponent<PlayerAttributes>().changePosition == 0)
                 {
                     System.Random rnd = new System.Random();
-                    int x = rnd.Next(0, 1);
-                    int z = rnd.Next(0, 1);
+                    int x = rnd.Next(0, 50);
+                    int z = rnd.Next(0, 50);
+                    int minus = rnd.Next(0, 2);
+                    if (minus == 0)
+                    {
+                        x *= -1;
+                        z *= -1;
+                    }
                     //transform.position = Vector3.MoveTowards(transform.position, followedPlayer.transform.position, 5);
-                    /*agent.SetDestination(new Vector3(followedPlayer.transform.position.x + x,
+                    agent.SetDestination(new Vector3(followedPlayer.transform.position.x + x,
                         agent.transform.position.y,
-                        followedPlayer.transform.position.z + z));*/
-                    Debug.Log("ASD2");
+                        followedPlayer.transform.position.z + z));
+                    //Debug.Log("ASD2");
                 }
             }
         }

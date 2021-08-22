@@ -19,9 +19,10 @@ public class NPCGunShoot : MonoBehaviour
     private Animator anim2;
 
     public bool isNPC;
-    int countFramesCount = 0;
-    int whenToShootFrames = 100;
-    int minusHealth = 1;
+
+    private int countFramesCount = 0;
+    private int whenToShootFrames;
+    private int minusHealth = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,6 @@ public class NPCGunShoot : MonoBehaviour
         anim2 = Enemy2.GetComponent<Animator>();
 
         System.Random rnd = new System.Random();
-        whenToShootFrames = rnd.Next(30, 100);
     }
 
     IEnumerator Shoot()
@@ -53,14 +53,11 @@ public class NPCGunShoot : MonoBehaviour
         if (currentPlayer.GetComponent<PlayerAttributes>().isAlive &&
             currentPlayer.GetComponent<PlayerAttributes>().hasGun &&
             isNPC &&
-            countFramesCount % whenToShootFrames == 0)
+            countFramesCount % currentPlayer.GetComponent<PlayerAttributes>().whenToShootFrames == 0)
         {
             RaycastHit hit;
             if (Physics.Raycast(currentPlayer.transform.position, currentPlayer.transform.forward, out hit))
             {
-                target.transform.position = hit.point;
-                StartCoroutine(Shoot());
-
                 GameObject pickedEnemy = null;
                 float pickeEnemyDistance = 9999999;
                 if (Enemy1.GetComponent<PlayerAttributes>().isAlive)
@@ -84,6 +81,9 @@ public class NPCGunShoot : MonoBehaviour
                 {
                     if (!pickedEnemy.Equals(null))
                     {
+                        currentPlayer.transform.LookAt(pickedEnemy.transform.position);
+                        target.transform.position = hit.point;
+                        StartCoroutine(Shoot());
                         pickedEnemy.GetComponent<PlayerAttributes>().health -= minusHealth;
                         if (pickedEnemy.GetComponent<PlayerAttributes>().health <= 0)
                         {

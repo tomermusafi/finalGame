@@ -5,7 +5,6 @@ using UnityEngine;
 public class ThrowingGrenadeNPC : MonoBehaviour
 {
     private bool isThrowen = false;
-    public GameObject player;
     public GameObject grenadePrefab;
     public GameObject currentPlayer;
     private AudioSource sound;
@@ -15,15 +14,17 @@ public class ThrowingGrenadeNPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sound = player.GetComponent<AudioSource>();
+        sound = currentPlayer.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isThrowen && currentPlayer.GetComponent<PlayerAttributes>().hasGrenade)
+        if (!isThrowen && 
+            currentPlayer.GetComponent<PlayerAttributes>().hasGrenade && 
+            !currentPlayer.GetComponent<PlayerAttributes>().threwGrenade)
         {
-            //currentPlayer.GetComponent<PlayerAttributes>().hasGrenade = false;
+            currentPlayer.GetComponent<PlayerAttributes>().threwGrenade = true;
             isThrowen = true;
             ThrowGgenade();
         }
@@ -32,7 +33,7 @@ public class ThrowingGrenadeNPC : MonoBehaviour
     void ThrowGgenade()
     {
         GameObject grenade = Instantiate(grenadePrefab, transform.position, transform.rotation);
-        Vector3 direction = player.transform.forward * 8;
+        Vector3 direction = currentPlayer.transform.forward * 8;
         direction.y = 3;
         Rigidbody rb = grenade.GetComponent<Rigidbody>();
         rb.useGravity = true;
@@ -42,21 +43,62 @@ public class ThrowingGrenadeNPC : MonoBehaviour
 
     IEnumerator Explode(GameObject grenade)
     {
-        yield return new WaitForSeconds(2.5f);
-        grenade.transform.GetChild(1).gameObject.SetActive(true);
-        sound.Play();
-        isThrowen = false;
-        Collider[] objectsCollider = Physics.OverlapSphere(transform.position, 20);
-        for (int i = 0; i < objectsCollider.Length; i++)
+        if (currentPlayer.GetComponent<PlayerAttributes>().num == 0)
         {
-            if (objectsCollider[i] != null)
+            yield return new WaitForSeconds(2.5f);
+            grenade.transform.GetChild(1).gameObject.SetActive(true);
+            sound.Play();
+            isThrowen = false;
+            Collider[] objectsCollider = Physics.OverlapSphere(transform.position, 20);
+            for (int i = 0; i < objectsCollider.Length; i++)
             {
-                Rigidbody rbo = objectsCollider[i].GetComponent<Rigidbody>();
-                if (rbo != null)
-                    rbo.AddExplosionForce(2500.0f, transform.position, 20);
+                if (objectsCollider[i] != null)
+                {
+                    Rigidbody rbo = objectsCollider[i].GetComponent<Rigidbody>();
+                    if (rbo != null)
+                        rbo.AddExplosionForce(2500.0f, transform.position, 20);
+                }
             }
+            yield return new WaitForSeconds(0.5f);
+            Destroy(grenade);
         }
-        yield return new WaitForSeconds(0.5f);
-        Destroy(grenade);
+        if (currentPlayer.GetComponent<PlayerAttributes>().num == 1)
+        {
+            yield return new WaitForSeconds(2.5f);
+            grenade.transform.GetChild(1).gameObject.SetActive(true);
+            sound.Play();
+            isThrowen = false;
+            Collider[] objectsCollider = Physics.OverlapSphere(transform.position, 20);
+            for (int i = 0; i < objectsCollider.Length; i++)
+            {
+                if (objectsCollider[i] != null)
+                {
+                    Rigidbody rbo = objectsCollider[i].GetComponent<Rigidbody>();
+                    if (rbo != null)
+                        rbo.AddExplosionForce(2500.0f, transform.position, 20);
+                }
+            }
+            yield return new WaitForSeconds(0.5f);
+            Destroy(grenade);
+        }
+        if (currentPlayer.GetComponent<PlayerAttributes>().num == 2)
+        {
+            yield return new WaitForSeconds(2.5f);
+            grenade.transform.GetChild(1).gameObject.SetActive(true);
+            sound.Play();
+            isThrowen = false;
+            Collider[] objectsCollider = Physics.OverlapSphere(transform.position, 20);
+            for (int i = 0; i < objectsCollider.Length; i++)
+            {
+                if (objectsCollider[i] != null)
+                {
+                    Rigidbody rbo = objectsCollider[i].GetComponent<Rigidbody>();
+                    if (rbo != null)
+                        rbo.AddExplosionForce(2500.0f, transform.position, 20);
+                }
+            }
+            yield return new WaitForSeconds(0.5f);
+            Destroy(grenade);
+        }
     }
 }

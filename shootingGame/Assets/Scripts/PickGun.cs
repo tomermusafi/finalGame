@@ -30,6 +30,7 @@ public class PickGun : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log("SDFSDF");
         gunGrass.SetActive(false);
         gunPlayer.SetActive(true);
         if (gunPlayer.transform.gameObject.name.Contains("Glock"))
