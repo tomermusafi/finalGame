@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ThrowingGrenadeNPC : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class ThrowingGrenadeNPC : MonoBehaviour
 
     public GameObject enemy1;
     public GameObject enemy2;
+
+    int minusHealth = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +57,26 @@ public class ThrowingGrenadeNPC : MonoBehaviour
             {
                 if (objectsCollider[i] != null)
                 {
+                    if (objectsCollider[i].transform.gameObject.name == enemy1.transform.gameObject.name)
+                    {
+                        enemy1.GetComponent<PlayerAttributes>().health -= minusHealth;
+                        if (enemy1.GetComponent<PlayerAttributes>().health <= 0)
+                        {
+                            enemy1.GetComponent<NavMeshAgent>().enabled = false;
+                            enemy1.GetComponent<PlayerAttributes>().isAlive = false;
+                        }
+                        Debug.Log("Hit npc grenade");
+                    }
+                    if (objectsCollider[i].transform.gameObject.name == enemy2.transform.gameObject.name)
+                    {
+                        enemy2.GetComponent<PlayerAttributes>().health -= minusHealth;
+                        if (enemy2.GetComponent<PlayerAttributes>().health <= 0)
+                        {
+                            enemy2.GetComponent<NavMeshAgent>().enabled = false;
+                            enemy2.GetComponent<PlayerAttributes>().isAlive = false;
+                        }
+                        Debug.Log("Hit npc grenade");
+                    }
                     Rigidbody rbo = objectsCollider[i].GetComponent<Rigidbody>();
                     if (rbo != null)
                         rbo.AddExplosionForce(2500.0f, transform.position, 20);
@@ -73,6 +96,26 @@ public class ThrowingGrenadeNPC : MonoBehaviour
             {
                 if (objectsCollider[i] != null)
                 {
+                    if (objectsCollider[i].transform.gameObject.name == enemy1.transform.gameObject.name)
+                    {
+                        enemy1.GetComponent<PlayerAttributes>().health -= minusHealth;
+                        if (enemy1.GetComponent<PlayerAttributes>().health <= 0)
+                        {
+                            enemy1.GetComponent<NavMeshAgent>().enabled = false;
+                            enemy1.GetComponent<PlayerAttributes>().isAlive = false;
+                        }
+                        Debug.Log("Hit npc grenade");
+                    }
+                    if (objectsCollider[i].transform.gameObject.name == enemy2.transform.gameObject.name)
+                    {
+                        enemy2.GetComponent<PlayerAttributes>().health -= minusHealth;
+                        if (enemy2.GetComponent<PlayerAttributes>().health <= 0)
+                        {
+                            enemy2.GetComponent<NavMeshAgent>().enabled = false;
+                            enemy2.GetComponent<PlayerAttributes>().isAlive = false;
+                        }
+                        Debug.Log("Hit npc grenade");
+                    }
                     Rigidbody rbo = objectsCollider[i].GetComponent<Rigidbody>();
                     if (rbo != null)
                         rbo.AddExplosionForce(2500.0f, transform.position, 20);
@@ -92,6 +135,26 @@ public class ThrowingGrenadeNPC : MonoBehaviour
             {
                 if (objectsCollider[i] != null)
                 {
+                    if (objectsCollider[i].transform.gameObject.name == enemy1.transform.gameObject.name)
+                    {
+                        enemy1.GetComponent<PlayerAttributes>().health -= minusHealth;
+                        if (enemy1.GetComponent<PlayerAttributes>().health <= 0)
+                        {
+                            enemy1.GetComponent<NavMeshAgent>().enabled = false;
+                            enemy1.GetComponent<PlayerAttributes>().isAlive = false;
+                        }
+                        Debug.Log("Hit npc grenade");
+                    }
+                    if (objectsCollider[i].transform.gameObject.name == enemy2.transform.gameObject.name)
+                    {
+                        enemy2.GetComponent<PlayerAttributes>().health -= minusHealth;
+                        if (enemy2.GetComponent<PlayerAttributes>().health <= 0)
+                        {
+                            enemy2.GetComponent<NavMeshAgent>().enabled = false;
+                            enemy2.GetComponent<PlayerAttributes>().isAlive = false;
+                        }
+                        Debug.Log("Hit npc grenade");
+                    }
                     Rigidbody rbo = objectsCollider[i].GetComponent<Rigidbody>();
                     if (rbo != null)
                         rbo.AddExplosionForce(2500.0f, transform.position, 20);
