@@ -21,9 +21,9 @@ public class ThrowingGrenadeNPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentPlayer.GetComponent<PlayerAttributes>().hasGrenade)
+        if (!isThrowen && currentPlayer.GetComponent<PlayerAttributes>().hasGrenade)
         {
-            currentPlayer.GetComponent<PlayerAttributes>().hasGrenade = false;
+            //currentPlayer.GetComponent<PlayerAttributes>().hasGrenade = false;
             isThrowen = true;
             ThrowGgenade();
         }

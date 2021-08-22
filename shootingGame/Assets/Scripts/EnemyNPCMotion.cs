@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NPCMotion : MonoBehaviour
+public class EnemyNPCMotion : MonoBehaviour
 {
     private NavMeshAgent agent;
     //public GameObject startPoint;
@@ -83,7 +83,6 @@ public class NPCMotion : MonoBehaviour
                     pickedGun.SetActive(false);
                     currentPlayer.transform.GetChild(currentPlayer.transform.childCount-1).gameObject.transform.GetChild(0).gameObject.SetActive(true);
                     currentPlayer.GetComponent<PlayerAttributes>().hasGun = true;
-                    //Debug.Log();
                 }
             }
 
@@ -128,9 +127,8 @@ public class NPCMotion : MonoBehaviour
                     pickedGrenade.transform.position.z == currentPlayer.transform.position.z)
                 {
                     pickedGrenade.SetActive(false);
-                    currentPlayer.transform.GetChild(currentPlayer.transform.childCount - 1).gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                    currentPlayer.transform.GetChild(currentPlayer.transform.childCount - 2).gameObject.transform.GetChild(0).gameObject.SetActive(true);
                     currentPlayer.GetComponent<PlayerAttributes>().hasGrenade = true;
-                    //Debug.Log();
                 }
             }
 
@@ -139,11 +137,14 @@ public class NPCMotion : MonoBehaviour
                 if (currentPositionCount % changePosition == 0)
                 {
                     System.Random rnd = new System.Random();
-                    int x = rnd.Next(10, 30);
-                    int z = rnd.Next(10, 30);
-                    agent.SetDestination(new Vector3(followedPlayer.transform.position.x + x,
+                    int x = rnd.Next(20, 50);
+                    int z = rnd.Next(20, 50);
+                    //transform.position = Vector3.MoveTowards(transform.position, followedPlayer.transform.position, 1);
+                    /*agent.SetDestination(new Vector3(followedPlayer.transform.position.x + x,
                         agent.transform.position.y,
                         followedPlayer.transform.position.z + z));
+                    */
+                    Debug.Log("ASD");
                 }
 
             }
@@ -152,11 +153,13 @@ public class NPCMotion : MonoBehaviour
                 if (currentPositionCount % changePosition == 0)
                 {
                     System.Random rnd = new System.Random();
-                    int x = rnd.Next(0, 10);
-                    int z = rnd.Next(0, 10);
-                    agent.SetDestination(new Vector3(followedPlayer.transform.position.x + x,
+                    int x = rnd.Next(0, 1);
+                    int z = rnd.Next(0, 1);
+                    //transform.position = Vector3.MoveTowards(transform.position, followedPlayer.transform.position, 5);
+                    /*agent.SetDestination(new Vector3(followedPlayer.transform.position.x + x,
                         agent.transform.position.y,
-                        followedPlayer.transform.position.z + z));
+                        followedPlayer.transform.position.z + z));*/
+                    Debug.Log("ASD2");
                 }
             }
         }

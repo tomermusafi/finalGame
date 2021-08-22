@@ -21,7 +21,7 @@ public class NPCGunShoot : MonoBehaviour
     public bool isNPC;
     int countFramesCount = 0;
     int whenToShootFrames = 100;
-    int minusHealth = 50;
+    int minusHealth = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -80,19 +80,25 @@ public class NPCGunShoot : MonoBehaviour
                         pickedEnemy = Enemy2;
                     }
                 }
-
-                if (!pickedEnemy.Equals(null))
+                try
                 {
-                    pickedEnemy.GetComponent<PlayerAttributes>().health -= minusHealth;
-                    if (pickedEnemy.GetComponent<PlayerAttributes>().health <= 0)
+                    if (!pickedEnemy.Equals(null))
                     {
-                        if (!pickedEnemy.GetComponent<PlayerAttributes>().isMainPlayer)
+                        pickedEnemy.GetComponent<PlayerAttributes>().health -= minusHealth;
+                        if (pickedEnemy.GetComponent<PlayerAttributes>().health <= 0)
                         {
-                            pickedEnemy.GetComponent<NavMeshAgent>().enabled = false;
-                            pickedEnemy.GetComponent<PlayerAttributes>().isAlive = false;
+                            if (!pickedEnemy.GetComponent<PlayerAttributes>().isMainPlayer)
+                            {
+                                pickedEnemy.GetComponent<NavMeshAgent>().enabled = false;
+                                pickedEnemy.GetComponent<PlayerAttributes>().isAlive = false;
+                            }
                         }
+                        //Debug.Log($"Hit enemy {pickedEnemy.transform.gameObject.name}");
                     }
-                    //Debug.Log($"Hit enemy {pickedEnemy.transform.gameObject.name}");
+                }
+                catch
+                {
+
                 }
             }
         }
