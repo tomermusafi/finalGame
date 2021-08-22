@@ -81,8 +81,9 @@ public class EnemyNPCMotion : MonoBehaviour
 
                 //if (pickedGun.transform.position.x == currentPlayer.transform.position.x &&
                   //  pickedGun.transform.position.z == currentPlayer.transform.position.z)
-                if (Vector3.Distance(pickedGun.transform.position, currentPlayer.transform.position) < 5)
+                if (Vector3.Distance(pickedGun.transform.position, currentPlayer.transform.position) < 3)
                 {
+                    pickedGun.transform.parent.gameObject.SetActive(false);
                     pickedGun.SetActive(false);
                     currentPlayer.transform.GetChild(currentPlayer.transform.childCount-1).gameObject.transform.GetChild(0).gameObject.SetActive(true);
                     currentPlayer.GetComponent<PlayerAttributes>().hasGun = true;
@@ -128,8 +129,9 @@ public class EnemyNPCMotion : MonoBehaviour
 
                 //if (pickedGrenade.transform.position.x == currentPlayer.transform.position.x &&
                   //  pickedGrenade.transform.position.z == currentPlayer.transform.position.z)
-                if (Vector3.Distance(pickedGrenade.transform.position, currentPlayer.transform.position) < 5)
+                if (Vector3.Distance(pickedGrenade.transform.position, currentPlayer.transform.position) < 3)
                 {
+                    pickedGrenade.transform.parent.gameObject.SetActive(false);
                     pickedGrenade.SetActive(false);
                     currentPlayer.transform.GetChild(currentPlayer.transform.childCount - 2).gameObject.transform.GetChild(0).gameObject.SetActive(true);
                     currentPlayer.GetComponent<PlayerAttributes>().hasGrenade = true;

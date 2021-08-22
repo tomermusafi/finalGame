@@ -763,7 +763,6 @@ GameObject:
   - component: {fileID: 299865858}
   - component: {fileID: 299865857}
   - component: {fileID: 299865856}
-  - component: {fileID: 299865860}
   m_Layer: 0
   m_Name: GlockFloor3
   m_TagString: Untagged
@@ -779,7 +778,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299865854}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.20684814, y: 0.095998764, z: 2.4175415}
+  m_LocalPosition: {x: -0.20684814, y: 1.91, z: 15.9}
   m_LocalScale: {x: 0.84, y: 1, z: 1}
   m_Children:
   - {fileID: 182921538}
@@ -864,22 +863,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299865854}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &299865860
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299865854}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &317554827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,7 +1352,6 @@ GameObject:
   - component: {fileID: 541835154}
   - component: {fileID: 541835153}
   - component: {fileID: 541835152}
-  - component: {fileID: 541835156}
   m_Layer: 0
   m_Name: GlockFloor1
   m_TagString: Untagged
@@ -1385,7 +1367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541835150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.20684814, y: -0.054000854, z: 0}
+  m_LocalPosition: {x: -0.20684814, y: -1.37, z: -23.01}
   m_LocalScale: {x: 0.84, y: 1, z: 1}
   m_Children:
   - {fileID: 452643372}
@@ -1470,22 +1452,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541835150}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &541835156
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 541835150}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &551062053
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,7 +2860,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 801403292}
-  - component: {fileID: 801403293}
   m_Layer: 0
   m_Name: GrenadeFloor1
   m_TagString: Untagged
@@ -2910,7 +2875,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801403291}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.4, y: 1.21, z: 19.187012}
+  m_LocalPosition: {x: 18.4, y: 1.38, z: 19.187012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1382687556}
@@ -2918,22 +2883,6 @@ Transform:
   m_Father: {fileID: 1036786059}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &801403293
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801403291}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &823480159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3101,7 +3050,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 884753410}
-  - component: {fileID: 884753411}
   m_Layer: 0
   m_Name: GrenadeFloor2
   m_TagString: Untagged
@@ -3117,7 +3065,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884753409}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.03, y: 2.93, z: 28.47}
+  m_LocalPosition: {x: 5.03, y: 2.7, z: 44.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 593418326}
@@ -3125,22 +3073,6 @@ Transform:
   m_Father: {fileID: 1036786059}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &884753411
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884753409}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &933083908
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,7 +3102,7 @@ Transform:
   m_GameObject: {fileID: 933083908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.515, y: -0.769, z: -9.754}
-  m_LocalScale: {x: 0.36, y: 0.38, z: 0.4}
+  m_LocalScale: {x: 0.63, y: 0.59, z: 0.61}
   m_Children: []
   m_Father: {fileID: 1254356096}
   m_RootOrder: 1
@@ -3883,7 +3815,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151941718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 405.81, y: 22.1, z: 706.45}
+  m_LocalPosition: {x: 304.5, y: 22.1, z: 376.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4523,7 +4455,6 @@ GameObject:
   - component: {fileID: 1234563750}
   - component: {fileID: 1234563749}
   - component: {fileID: 1234563748}
-  - component: {fileID: 1234563752}
   m_Layer: 0
   m_Name: GlockFloor2
   m_TagString: Untagged
@@ -4539,7 +4470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234563746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.7269897, y: -0.18099976, z: 1.9975586}
+  m_LocalPosition: {x: 30.21, y: 0.82, z: 11.91}
   m_LocalScale: {x: 0.84, y: 1, z: 1}
   m_Children:
   - {fileID: 154813607}
@@ -4624,22 +4555,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234563746}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1234563752
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234563746}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1253031655
 GameObject:
   m_ObjectHideFlags: 0
@@ -4669,7 +4584,7 @@ Transform:
   m_GameObject: {fileID: 1253031655}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.53, y: -1.07, z: -9.782}
-  m_LocalScale: {x: 0.47, y: 0.7, z: 0.44}
+  m_LocalScale: {x: 0.75, y: 0.85, z: 0.59}
   m_Children: []
   m_Father: {fileID: 884753410}
   m_RootOrder: 1
@@ -4760,7 +4675,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1254356096}
-  - component: {fileID: 1254356097}
   m_Layer: 0
   m_Name: GrenadeFloor4
   m_TagString: Untagged
@@ -4776,7 +4690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254356095}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.53, y: 0.94, z: 23.55}
+  m_LocalPosition: {x: 19.04, y: 3.3, z: 39.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1112048692}
@@ -4784,22 +4698,6 @@ Transform:
   m_Father: {fileID: 1036786059}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1254356097
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254356095}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1287399776
 GameObject:
   m_ObjectHideFlags: 0
@@ -4999,11 +4897,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299270975}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.9143066, y: -1.9299989, z: 9.34613}
+  m_LocalPosition: {x: 383.95, y: 25.730001, z: 715.8708}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
-  m_Father: {fileID: 1604282005}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1325936426 stripped
 GameObject:
@@ -5326,7 +5224,7 @@ Transform:
   m_GameObject: {fileID: 1442051048}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.57, y: -0.533, z: -9.82}
-  m_LocalScale: {x: 0.65, y: 0.55, z: 0.42}
+  m_LocalScale: {x: 0.8, y: 0.7, z: 0.69}
   m_Children: []
   m_Father: {fileID: 801403292}
   m_RootOrder: 1
@@ -5554,7 +5452,6 @@ GameObject:
   - component: {fileID: 1463384326}
   - component: {fileID: 1463384325}
   - component: {fileID: 1463384324}
-  - component: {fileID: 1463384328}
   m_Layer: 0
   m_Name: GlockFloor4
   m_TagString: Untagged
@@ -5570,7 +5467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463384322}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.747009, y: -1.4239998, z: -3.7524414}
+  m_LocalPosition: {x: 10.747009, y: -1.62, z: -14.2}
   m_LocalScale: {x: 0.84, y: 1, z: 1}
   m_Children:
   - {fileID: 1475876738}
@@ -5655,22 +5552,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463384322}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &1463384328
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463384322}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1472016997
 GameObject:
   m_ObjectHideFlags: 0
@@ -6087,7 +5968,6 @@ Transform:
   m_Children:
   - {fileID: 1660013907}
   - {fileID: 963194228}
-  - {fileID: 1299270979}
   m_Father: {fileID: 935028544}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6251,7 +6131,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604282001}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8e2d28e39f8d1f4f824234d5031567b, type: 3}
   m_Name: 
@@ -6694,7 +6574,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1859025194}
-  - component: {fileID: 1859025195}
   m_Layer: 0
   m_Name: GrenadeFloor3
   m_TagString: Untagged
@@ -6710,7 +6589,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859025193}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.37, y: 2.15, z: 32.86}
+  m_LocalPosition: {x: -7.8, y: 3.65, z: 23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 866742065}
@@ -6718,22 +6597,6 @@ Transform:
   m_Father: {fileID: 1036786059}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1859025195
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859025193}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1864845172
 GameObject:
   m_ObjectHideFlags: 0
@@ -6941,7 +6804,7 @@ Transform:
   m_GameObject: {fileID: 1948452880}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.545, y: -1.015, z: -9.778}
-  m_LocalScale: {x: 0.48, y: 0.6, z: 0.33}
+  m_LocalScale: {x: 0.63, y: 0.69, z: 0.45}
   m_Children: []
   m_Father: {fileID: 1859025194}
   m_RootOrder: 1

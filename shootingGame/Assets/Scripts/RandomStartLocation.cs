@@ -58,8 +58,8 @@ public class RandomStartLocation : MonoBehaviour
         int count = 0;
         foreach (GameObject o in objects)
         {
-            int x = rnd.Next(0, 60);
-            int z = rnd.Next(0, 60);
+            int x = rnd.Next(0, 20);
+            int z = rnd.Next(0, 20);
 
             int minusx = rnd.Next(0, 2);
             int minusz = rnd.Next(0, 2);
@@ -77,7 +77,11 @@ public class RandomStartLocation : MonoBehaviour
             o.transform.position = GetTerrainPos(center.transform.position.x + x, center.transform.position.z + z);
             if (count > 8)
             {
-                o.transform.position = new Vector3(o.transform.position.x, o.transform.position.y + 300, o.transform.position.z);
+                o.transform.position = new Vector3(o.transform.position.x, o.transform.position.y + 30, o.transform.position.z);
+            }
+            else
+            {
+                o.transform.position = new Vector3(o.transform.position.x, o.transform.position.y + 100, o.transform.position.z);
             }
             count++;
         }
