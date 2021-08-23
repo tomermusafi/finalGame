@@ -10,6 +10,7 @@ public class NPCGunShoot : MonoBehaviour
 
     public GameObject currentPlayer;
     private AudioSource sound;
+    private AudioSource sound2;
     public GameObject aGun;
     public GameObject target;
 
@@ -30,7 +31,7 @@ public class NPCGunShoot : MonoBehaviour
         sound = aGun.GetComponent<AudioSource>();
         anim1 = Enemy1.GetComponent<Animator>();
         anim2 = Enemy2.GetComponent<Animator>();
-
+        sound2 = Enemy2.GetComponent<AudioSource>();
         System.Random rnd = new System.Random();
     }
 
@@ -85,6 +86,8 @@ public class NPCGunShoot : MonoBehaviour
                         target.transform.position = hit.point;
                         StartCoroutine(Shoot());
                         pickedEnemy.GetComponent<PlayerAttributes>().health -= minusHealth;
+                        if(pickedEnemy.GetComponent<PlayerAttributes>().num == 4)
+                            sound2.Play();
                         if (pickedEnemy.GetComponent<PlayerAttributes>().health <= 0)
                         {
                             if (!pickedEnemy.GetComponent<PlayerAttributes>().isMainPlayer)
