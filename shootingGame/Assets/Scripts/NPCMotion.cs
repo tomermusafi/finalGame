@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyNPCMotion : MonoBehaviour
+public class NPCMotion : MonoBehaviour
 {
     private NavMeshAgent agent;
     //public GameObject startPoint;
@@ -22,7 +22,7 @@ public class EnemyNPCMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(followedPlayer.GetComponent<PlayerAttributes>().health);
+        // Debug.Log(followedPlayer.GetComponent<PlayerAttributes>().health);
 
         
         if (followMainPlayer)
@@ -30,8 +30,8 @@ public class EnemyNPCMotion : MonoBehaviour
             if (currentPositionCount % changePosition == 0)
             {
                 System.Random rnd = new System.Random();
-                int x = rnd.Next(10, 30);
-                int z = rnd.Next(10, 30);
+                int x = rnd.Next(1, 10);
+                int z = rnd.Next(1, 10);
                 agent.SetDestination(new Vector3(followedPlayer.transform.position.x + x,
                     agent.transform.position.y,
                     followedPlayer.transform.position.z + z));
@@ -42,8 +42,8 @@ public class EnemyNPCMotion : MonoBehaviour
             if (currentPositionCount % changePosition == 0)
             {
                 System.Random rnd = new System.Random();
-                int x = rnd.Next(0, 10);
-                int z = rnd.Next(0, 10);
+                int x = rnd.Next(1, 10);
+                int z = rnd.Next(1, 10);
                 agent.SetDestination(new Vector3(followedPlayer.transform.position.x + x,
                     agent.transform.position.y,
                     followedPlayer.transform.position.z + z));

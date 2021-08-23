@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController controller;
-    private float speed = 0.1f;
+    private float speed = 0.15f;
     float rx = 0f, ry;
-    private float angularSpeed = 12f;
+    private float angularSpeed = 15f;
     public GameObject playerCamera;
     // Start is called before the first frame update
     void Start()
